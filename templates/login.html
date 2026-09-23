@@ -1,28 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Iniciar sesión</title>
-</head>
+{% block title %}
+Iniciar sesión
+{% endblock %}
 
-<body>
 
-    <h1>Portal de Biblioteca</h1>
+{% block contenido %}
 
-    <h2>Inicio de sesión</h2>
+<div class="formulario">
+
+    <h2>
+        Inicio de sesión
+    </h2>
+
+
+    {% if error %}
+
+        <div class="error">
+
+            {{ error }}
+
+        </div>
+
+    {% endif %}
+
 
     <form method="POST">
 
-        <label>Usuario:</label>
-        <input type="text" name="usuario" required>
+        <label for="usuario">
+            Usuario
+        </label>
 
-        <br><br>
+        <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            required
+        >
 
-        <label>Contraseña:</label>
-        <input type="password" name="contraseña" required>
 
-        <br><br>
+        <label for="contraseña">
+            Contraseña
+        </label>
+
+        <input
+            type="password"
+            id="contraseña"
+            name="contraseña"
+            required
+        >
+
 
         <button type="submit">
             Iniciar sesión
@@ -30,6 +57,6 @@
 
     </form>
 
-</body>
+</div>
 
-</html>
+{% endblock %}
